@@ -11,7 +11,7 @@ container.appendChild(renderer.domElement);
 const loader = new THREE.STLLoader();
 let head;
 let isHeadLoaded = false;
-loader.load('/models/scan30.stl', function (geometry) {
+loader.load('models/scan30.stl', function (geometry) {
     const material = new THREE.MeshNormalMaterial();
     head = new THREE.Mesh(geometry, material);
     head.scale.set(.1, 0.1, 0.1); // Adjust the scale as needed
