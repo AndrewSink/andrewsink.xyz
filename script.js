@@ -19,6 +19,10 @@ loader.load('/models/scan30.stl', function (geometry) {
     scene.add(head);
     isHeadLoaded = true;
 
+    if (isHeadLoaded == true) {
+        console.log('loaded')
+    }
+
 });
 
 // Set camera position
