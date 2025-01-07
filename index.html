@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <!-- Page Information
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>Andrew Sink</title>
+    <meta name="description" content="https://littlelink.io">
+    <meta name="author" content="Andrew Sink">
+
+    <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <!-- three.js
+          –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
+
+    <!-- Themes:
+            Auto:   css/skeleton-auto.css
+            Light:  css/skeleton-light.css
+            Dark:   css/skeleton-dark.css
+     -->
+    <link rel="stylesheet" href="css/skeleton-dark.css">
+
+    <!-- Brand Styles -->
+    <link rel="stylesheet" href="css/brands.css">
+
+    <!-- threejs container Styles -->
+    <style>
+      #threejs-container {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        /* Adjust the height as needed */
+        margin: 0 auto;
+        /* Center the container */
+        pointer-events: none;
+        /* Allows mouse events to pass through */
+        z-index: 1;
+        /* Ensure the canvas is above other elements */
+      }
+
+      .container {
+        position: relative;
+        z-index: 2;
+        /* Ensure the container is above the canvas */
+      }
+    </style>
+
+    <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="images/littlelink.png">
+
+  </head>
+
+  <body>
+
+    <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div class="container">
+      <div id="threejs-container"></div>
+      <div class="row">
+        <div class="column" style="margin-top: -30px">
+
+          <!-- 
+
+          ## Getting Started with LittleLink
+
+          This page has been built with every pre-designed button available in LittleLink by default. You can rearrange and delete as needed.
+
+          You can add your own brand or others brands you may need in the `css/brands.css` file. 
+
+          You can add custom icons to `images/icons/...`. It is recommended to use a 24x24 .SVG.
+
+          Edit the "Your Image Here" section to add your own personal branding, like a picture of yourself or your brand logo!
+
+          Edit the "Title" section to change the page heading. You can use something like your name, your social handle, or your brand name.
+
+          Edit the "Short Bio" section tell users about yourself or your brand.
+
+        -->
+
+          <!-- Your Image Here -->
+          <!-- <img src="images/andrew.webp" class="avatar" srcset="images/andrew.webp 2x" alt=""> -->
+
+          <!-- Title -->
+          <h1 role="heading">Andrew Sink</h1>
+
+          <!-- Short Bio -->
+          <p>Hi! I'm enthusiastic about 3D printing, and I love sharing my projects!</p>
+
+          <!--
+
+          ## Breaking down <a> attributes:
+          
+          1.) class="button button-default" | The first "button" here is telling this <a> tag that it should make this element a button and applies the default styling in `css/brands.css`.
+          The second portion, button-default, is declaring the specific brand style you would like to apply. Here we're applying the "default" style and color.
+          If you want to make this button to use the brand colors for Discord, just change "button-default" to "button-discord". Brands are found in `css/brands.css`. You can always edit & add your own there.
+
+          2.) Replace the # in href="#" with the desired target URL for the button.
+
+          3.) target="_blank" | This attribute opens links in a new tab. Remove this attribute to prevent links from opening in a new tab.
+
+          4.) rel="noopener" | This attribute instructs the browser to navigate to the target resource without granting the new browsing context access to the document that opened it.
+          This is especially useful when opening untrusted links. https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/noopener
+
+          5.) role="button" | The button role identifies an element as a button to assistive technology such as screen readers.
+
+          ## Breaking down the <img> attributes:
+          
+          1.) class="icon" | This class is telling the <img> tag that it should use the styling for icons found in `css/brands.css`.
+
+          2.) src="images/icons/[icon-name].svg" | This defines the icon you would like to display from the 'images/icons/' folder. For example, you can change this to src="images/icons/discord.svg" to use the Discord icon.
+          Add your own 24x24 icons to the "icons" folder to reference them. We recommend providing a SVG.
+
+          3.) alt="" | Since the text at the end of the snippet, "..>[Button Text]</a><br>", explains what the button is, we use "alt=""" to nullify the icon annoucement from the accessibility tree. 
+          This can improve the experience for assistive technology users by hiding what is essentially duplicated
+
+        -->
+
+          <!-- YouTube -->
+          <a class="button button-yt" href="http://www.youtube.com/c/andrewsink" target="_blank" rel="noopener"
+            role="button"><img class="icon" aria-hidden="true" src="images/icons/youtube.svg" alt="YouTube Logo">YouTube
+            (11M Views and
+            Counting!)</a><br>
+
+          <!-- Twitter -->
+          <a class="button button-x" href="https://twitter.com/AndrewASink" target="_blank" rel="noopener"
+            role="button"><img class="icon" aria-hidden="true" src="images/icons/twitter.webp" alt="X Logo">Follow on
+            Twitter</a><br>
+
+          <!-- Low Poly Generator -->
+          <a class="button button-x" href="https://lowpoly3d.xyz/" target="_blank" rel="noopener" role="button"><img
+              class="icon" aria-hidden="true" src="images/icons/lowpoly.webp" alt="Low Poly 3D
+            Generator">Low Poly 3D
+            Generator</a><br>
+
+          <!-- Low Poly Generator -->
+          <a class="button button-x" href="https://andrewsink.github.io/STL-to-ASCII-Generator/" target="_blank"
+            rel="noopener" role="button"><img class="icon" aria-hidden="true" src="images/icons/stl_to_ascii_big.png"
+              alt="Little Link Logo">STL TO ASCII Generator</a><br>
+
+          <!-- ResinLapse -->
+          <a class="button button-x" href="https://resinlapse.bigcartel.com/product/resinlapse" target="_blank"
+            rel="noopener" role="button"><img class="icon" aria-hidden="true" src="images/icons/RL_logo.png"
+              alt="ResinLapse / Make resin timelapse videos with your DSLR camera!">ResinLapse / Make resin timelapse
+            videos with your DSLR camera!</a><br>
+
+          <!-- Linkedin -->
+          <a class="button button-x" href="https://www.linkedin.com/in/andrewsink/" target="_blank" rel="noopener"
+            role="button"><img class="icon" aria-hidden="true" src="images/icons/linkedin.svg"
+              alt="LinkedIn Logo">LinkedIn</a>
+
+          <!-- Ko-fi -->
+          <a class="button button-x" href="https://ko-fi.com/andrewsink" target="_blank" rel="noopener"
+            role="button"><img class="icon" aria-hidden="true" src="images/icons/ko-fi.svg" alt="Ko-fi Logo">Buy me a
+            coffee!</a><br>
+
+          <!-- Tom's Hardware -->
+          <a class="button button-x" href="https://www.tomshardware.com/author/andrew-sink" target="_blank"
+            rel="noopener" role="button"><img class="icon" aria-hidden="true" src="images/icons/generic-website.svg"
+              alt="Website Icon">3D Printer Reviews on Tom's
+            Hardware</a><br>
+
+          <!-- 3DWithUs -->
+          <a class="button button-x" href="https://3dwithus.com/author/andrewsink" target="_blank" rel="noopener"
+            role="button"><img class="icon" aria-hidden="true" src="images/icons/generic-website.svg"
+              alt="Website Icon">3D
+            Printer Reviews on 3DWithUs</a><br>
+
+          <!-- Sketchfab -->
+          <a class="button button-x" href="https://ko-fi.com/andrewsink" target="_blank" rel="noopener"
+            role="button"><img class="icon" aria-hidden="true" src="images/icons/sketchfab-logo.png" alt="Ko-fi Logo">3D
+            Scans on
+            Sketchfab</a><br>
+
+          <!-- GitHub -->
+          <a class="button button-github" href="https://github.com/AndrewSink" target="_blank" rel="noopener"
+            role="button"><img class="icon" aria-hidden="true" src="images/icons/github.svg"
+              alt="GitHub Logo">GitHub</a><br>
+          <br>
+          <!-- 
+            Footer:
+            This includes a link to privacy.html page which can be setup for your Privacy Policy.
+            This also includes a link to the LittleLink repository to make forking LittleLink easier.
+            You can edit or remove anything here to make your own footer.
+        -->
+          <p>Made with <a href="https://littlelink.io" target="_blank" rel="noopener" role="button">LittleLink</a> and
+            <a href="https://threejs.org/" target="_blank" rel="noopener" role="button">three.js</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  </body>
+
+</html>
