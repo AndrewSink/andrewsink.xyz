@@ -2,7 +2,7 @@ name: Deploy Next.js site to Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: ["updated-ui-2"]  # Changed from "main" to your branch
   workflow_dispatch:
 
 permissions:
@@ -35,6 +35,9 @@ jobs:
       
       - name: Add .nojekyll file
         run: touch ./out/.nojekyll
+        
+      - name: List build output
+        run: ls -la ./out/
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
