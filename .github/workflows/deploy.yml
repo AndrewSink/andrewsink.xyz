@@ -2,7 +2,7 @@ name: Deploy Next.js site to Pages
 
 on:
   push:
-    branches: ["updated-ui-2"]  # Changed from "main" to your branch
+    branches: ["updated-ui-2"]
   workflow_dispatch:
 
 permissions:
@@ -28,7 +28,7 @@ jobs:
           cache: 'npm'
       
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --legacy-peer-deps
       
       - name: Build with Next.js
         run: npm run build
