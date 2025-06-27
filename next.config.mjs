@@ -2,8 +2,7 @@
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
-  basePath: process.env.NODE_ENV === 'production' ? '/andrewsink.xyz' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/andrewsink.xyz/' : '',
+  distDir: 'out',
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -13,10 +12,9 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  webpack: (config) => {
-    config.externals = [...config.externals, { canvas: 'canvas' }]
-    return config
-  }
+  // Remove basePath and assetPrefix for now - they cause 404s
+  // basePath: process.env.NODE_ENV === 'production' ? '/your-repo-name' : '',
+  // assetPrefix: process.env.NODE_ENV === 'production' ? '/your-repo-name/' : '',
 }
 
 export default nextConfig
