@@ -94,7 +94,7 @@ export function LinksSection() {
     <div className="space-y-6">
       <Section title="Social" links={socialLinks} />
       <Section title="Projects" links={projectLinks} />
-      <Section title="Professional" links={professionalLinks} />
+      <Section title="Writing" links={professionalLinks} />
       <Section title="Support" links={supportLinks} />
     </div>
   )
