@@ -59,14 +59,14 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between h-16">
                     <div class="flex items-center">
-                        <a href="index.html" class="text-xl font-bold text-gray-900">Andrew Sink</a>
+                        <a href="/" class="text-xl font-bold text-gray-900">Andrew Sink</a>
                     </div>
                     <div class="hidden md:flex items-center space-x-8">
-                        <a href="index.html" class="text-gray-900 hover:text-blue-600 transition-colors">Home</a>
-                        <a href="projects.html" class="text-gray-600 hover:text-blue-600 transition-colors">Projects</a>
-                        <a href="media/" class="text-gray-600 hover:text-blue-600 transition-colors">Press &
+                        <a href="/" class="text-gray-900 hover:text-blue-600 transition-colors">Home</a>
+                        <a href="/projects/" class="text-gray-600 hover:text-blue-600 transition-colors">Projects</a>
+                        <a href="/media/" class="text-gray-600 hover:text-blue-600 transition-colors">Press &
                             Media</a>
-                        <a href="about.html" class="text-gray-600 hover:text-blue-600 transition-colors">About</a>
+                        <a href="/about/" class="text-gray-600 hover:text-blue-600 transition-colors">About</a>
                     </div>
                     <div class="md:hidden flex items-center">
                         <button id="mobile-menu-button" class="text-gray-600 hover:text-gray-900">
@@ -79,10 +79,10 @@
                 </div>
                 <!-- Mobile menu -->
                 <div id="mobile-menu" class="hidden md:hidden pb-4">
-                    <a href="index.html" class="block py-2 text-gray-900">Home</a>
-                    <a href="projects.html" class="block py-2 text-gray-600">Projects</a>
-                    <a href="media/" class="block py-2 text-gray-600">Press & Media</a>
-                    <a href="about.html" class="block py-2 text-gray-600">About</a>
+                    <a href="/" class="block py-2 text-gray-900">Home</a>
+                    <a href="/projects/" class="block py-2 text-gray-600">Projects</a>
+                    <a href="/media/" class="block py-2 text-gray-600">Press & Media</a>
+                    <a href="/about/" class="block py-2 text-gray-600">About</a>
                 </div>
             </div>
         </nav>
@@ -105,15 +105,15 @@
                             publish open-source tools for 3D modeling.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4">
-                            <a href="projects.html"
+                            <a href="/projects/"
                                 class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors text-center">
                                 View My Projects
                             </a>
-                            <a href="media/"
+                            <a href="/media/"
                                 class="bg-gray-600 text-white px-8 py-3 rounded-lg hover:bg-gray-700 transition-colors text-center">
                                 Media
                             </a>
-                            <a href="about.html"
+                            <a href="/about/"
                                 class="border border-blue-600 text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors text-center">
                                 Learn More About Me
                             </a>
@@ -153,7 +153,7 @@
                             </svg>
                             Shuffle Projects
                         </button>
-                        <a href="projects.html"
+                        <a href="/projects/"
                             class="bg-gray-900 text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition-colors">
                             View All Projects
                         </a>
@@ -189,7 +189,7 @@
                 async function fetchProjectsFromPage() {
                     try {
                         // Fetch the projects page
-                        const response = await fetch('projects.html');
+                        const response = await fetch('/projects/');
                         const html = await response.text();
 
                         // Create a temporary DOM element to parse the HTML
@@ -206,7 +206,7 @@
                                 const imageElement = card.querySelector('img');
                                 const titleElement = card.querySelector('h3');
                                 const descriptionElement = card.querySelector('p');
-                                const linkElement = card.querySelector('a[href*="projects/"]');
+                                const linkElement = card.querySelector('a[href*="-"]') || card.querySelector('a');
                                 const yearElement = card.querySelector('.text-sm.text-gray-500:first-of-type');
                                 const skillsElement = card.querySelector('.text-sm.text-gray-500:last-of-type');
 
@@ -214,9 +214,9 @@
                                     const project = {
                                         title: titleElement.textContent.trim(),
                                         description: descriptionElement.textContent.trim(),
-                                        image: imageElement.src,
+                                        image: 'projects/' + imageElement.getAttribute('src'),
                                         alt: imageElement.alt,
-                                        link: linkElement.href,
+                                        link: 'projects/' + linkElement.getAttribute('href'),
                                         year: yearElement ? yearElement.textContent.trim() : '',
                                         skills: skillsElement ? skillsElement.textContent.trim() : ''
                                     };
@@ -243,7 +243,7 @@
                             description: "A tool that allows users to create low poly 3D models from any image. Perfect for games, animations, and stylized projects.",
                             image: "projects/3d-low-poly-generator/assets/2.jpeg",
                             alt: "3D Low Poly Generator Interface",
-                            link: "projects/3d-low-poly-generator/index.html",
+                            link: "projects/3d-low-poly-generator/",
                             year: "2021"
                         },
                         {
@@ -251,7 +251,7 @@
                             description: "A web-based tool that converts 3D models to ASCII art for pen plotting, visualization, and creative projects.",
                             image: "projects/stl-to-ascii/assets/1.jpg",
                             alt: "STL to ASCII Generator Interface",
-                            link: "projects/stl-to-ascii/index.html",
+                            link: "projects/stl-to-ascii/",
                             year: "2023"
                         }
                     ];
