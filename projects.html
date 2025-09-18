@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description"
+            content="Browse Andrew Sink's complete portfolio of 3D printing projects, 3D scanning projects, and 3D software tools. Filter by category and explore detailed project information.">
+        <title>Projects - Andrew Sink</title>
+
+        <!-- Open Graph Meta Tags -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Projects - Andrew Sink's 3D Printing & Software Portfolio">
+        <meta property="og:description"
+            content="Browse Andrew Sink's complete portfolio of 3D printing projects, 3D scanning innovations, and browser-based 3D software tools. Features work in additive manufacturing, custom toolheads, and creative applications.">
+        <meta property="og:url" content="https://andrewsink.xyz/projects.html">
+        <meta property="og:site_name" content="Andrew Sink - 3D Printing Specialist">
+        <meta property="og:image" content="https://andrewsink.xyz/projects/fizik-one-to-one/assets/1.jpeg">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta property="og:image:alt"
+            content="fizik One-to-One Custom 3D Printed Saddle - Featured project by Andrew Sink">
+        <meta property="og:locale" content="en_US">
+
+        <!-- Twitter Card Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@AndrewASink">
+        <meta name="twitter:creator" content="@AndrewASink">
+        <meta name="twitter:title" content="Projects - Andrew Sink's 3D Printing & Software Portfolio">
+        <meta name="twitter:description"
+            content="Browse Andrew Sink's complete portfolio of 3D printing projects, 3D scanning innovations, and browser-based 3D software tools. Features work in additive manufacturing, custom toolheads, and creative applications.">
+        <meta name="twitter:image" content="https://andrewsink.xyz/projects/fizik-one-to-one/assets/1.jpeg">
+        <meta name="twitter:image:alt"
+            content="fizik One-to-One Custom 3D Printed Saddle - Featured project by Andrew Sink">
+
+        <!-- Additional SEO Meta Tags -->
+        <meta name="author" content="Andrew Sink">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https://andrewsink.xyz/projects.html">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            // Hybrid approach: CDN primary, local fallback
+            window.addEventListener('load', function () {
+                if (typeof tailwind === 'undefined') {
+                    const link = document.createElement('link');
+                    link.rel = 'stylesheet';
+                    link.href = 'assets/tailwind.min.css';
+                    document.head.appendChild(link);
+                }
+            });
+        </script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body class="bg-gray-50">
+        <!-- Navigation -->
+        <nav class="bg-white shadow-sm sticky top-0 z-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <div class="flex items-center">
+                        <a href="index.html" class="text-xl font-bold text-gray-900">Andrew Sink</a>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="index.html" class="text-gray-600 hover:text-blue-600 transition-colors">Home</a>
+                        <a href="projects.html" class="text-gray-900 hover:text-blue-600 transition-colors">Projects</a>
+                        <a href="media/" class="text-gray-600 hover:text-blue-600 transition-colors">Press &
+                            Media</a>
+                        <a href="about.html" class="text-gray-600 hover:text-blue-600 transition-colors">About</a>
+                    </div>
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-button" class="text-gray-600 hover:text-gray-900">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <!-- Mobile menu -->
+                <div id="mobile-menu" class="hidden md:hidden pb-4">
+                    <a href="index.html" class="block py-2 text-gray-600">Home</a>
+                    <a href="projects.html" class="block py-2 text-gray-900">Projects</a>
+                    <a href="media/" class="block py-2 text-gray-600">Press & Media</a>
+                    <a href="about.html" class="block py-2 text-gray-600">About</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Header -->
+        <section class="bg-gradient-to-br from-blue-50 to-indigo-100 py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h1 class="text-4xl font-bold text-gray-900 mb-4">Projects</h1>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        A curated collection of my work in 3D printing, 3D scanning, and developing browser-based 3D
+                        software.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter Section -->
+        <section class="bg-gray-50 py-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-6">
+                    <h3 class="text-lg font-semibold text-gray-900">Filter by type</h3>
+                </div>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button
+                        class="filter-btn active bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                        data-filter="all">
+                        All Projects
+                    </button>
+                    <button
+                        class="filter-btn bg-green-100 text-green-800 px-6 py-2 rounded-lg hover:bg-green-200 transition-colors"
+                        data-filter="3d-printing">
+                        3D Printing
+                    </button>
+                    <button
+                        class="filter-btn bg-purple-100 text-purple-800 px-6 py-2 rounded-lg hover:bg-purple-200 transition-colors"
+                        data-filter="3d-software">
+                        3D Software
+                    </button>
+                    <button
+                        class="filter-btn bg-blue-100 text-blue-800 px-6 py-2 rounded-lg hover:bg-blue-200 transition-colors"
+                        data-filter="3d-scanning">
+                        3D Scanning
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Grid -->
+        <section class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+
+                    <!-- 3D Spectrogram -->
+                    <div class="project-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+                        data-category="3d-software">
+                        <div class="h-48 overflow-hidden">
+                            <a href="projects/3d-spectrogram/index.html">
+                                <img src="projects/3d-spectrogram/assets/1.png" alt="3D Spectrogram - Audio to 3D Model"
+                                    class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                            </a>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-2">
+                                <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">3D
+                                    Software</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">3D Spectrogram</h3>
+                            <p class="text-gray-600 mb-4">
+                                A browser-based tool that generates 3D printable models from audio files, converting
+                                sound
+                                frequency data into physical objects.
+                            </p>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-sm text-gray-500">2025</span>
+                                <span class="text-sm text-gray-500">Three.js, JavaScript, 3D Modeling</span>
+                            </div>
+                            <a href="projects/3d-spectrogram/index.html"
+                                class="text-blue-600 hover:text-blue-700 font-medium">
+                                View Project Details →
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 3D Printed Skull from CT Scan -->
+                    <div class="project-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+                        data-category="3d-printing 3d-scanning">
+                        <div class="h-48 overflow-hidden">
+                            <a href="projects/3d-printed-skull/index.html">
+                                <img src="projects/3d-printed-skull/assets/3.jpeg" alt="3D Printed Skull from CT Scan"
+                                    class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                            </a>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-2 gap-2">
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">3D
+                                    Scanning</span>
+                                <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">3D
+                                    Printing</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">3D Printed Skull from CT Scan</h3>
+                            <p class="text-gray-600 mb-4">
+                                A reconstruction of my skull from CT scan data, created using medical segmentation
+                                software.
+                            </p>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-sm text-gray-500">2025</span>
+                                <span class="text-sm text-gray-500">Medical Imaging, 3D Scanning</span>
+                            </div>
+                            <a href="projects/3d-printed-skull/index.html"
+                                class="text-blue-600 hover:text-blue-700 font-medium">
+                                View Project Details →
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- fizik One-to-One -->
+                    <div class="project-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+                        data-category="3d-printing">
+                        <div class="h-48 overflow-hidden">
+                            <a href="projects/fizik-one-to-one/index.html">
+                                <img src="projects/fizik-one-to-one/assets/1.jpeg"
+                                    alt="fizik One-to-One Custom 3D Printed Saddle"
+                                    class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                            </a>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-2">
+                                <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">3D
+                                    Printing</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">fizik One-to-One Custom Saddle</h3>
+                            <p class="text-gray-600 mb-4">
+                                Custom 3D printed bike saddle that uses real-time pressure mapping data and Carbon DLS
+                                technology for high-performance comfort.
+                            </p>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-sm text-gray-500">2024</span>
+                                <span class="text-sm text-gray-500">Carbon DLS, Pressure Mapping</span>
+                            </div>
+                            <a href="projects/fizik-one-to-one/index.html"
+                                class="text-blue-600 hover:text-blue-700 font-medium">
+                                View Project Details →
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- pltr Pen Plotter Toolhead -->
+                    <div class="project-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+                        data-category="3d-printing">
+                        <div class="h-48 overflow-hidden">
+                            <a href="projects/pltr-toolhead/index.html">
+                                <img src="projects/pltr-toolhead/assets/1.jpeg" alt="pltr Pen Plotter Toolhead"
+                                    class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                            </a>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-2">
+                                <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">3D
+                                    Printing</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">pltr Pen Plotter Toolhead</h3>
+                            <p class="text-gray-600 mb-4">
+                                A 3D printable pen plotter toolhead that converts a 3D printer
+                                into a 2D pen plotter.
+                            </p>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-sm text-gray-500">2022</span>
+                                <span class="text-sm text-gray-500">3D Printing, CAD Design</span>
+                            </div>
+                            <a href="projects/pltr-toolhead/index.html"
+                                class="text-blue-600 hover:text-blue-700 font-medium">
+                                View Project Details →
+                            </a>
+                        </div>
+                    </div>
+
+
+
+                    <!-- STL to ASCII Generator -->
+                    <div class="project-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+                        data-category="3d-software">
+                        <div class="h-48 overflow-hidden">
+                            <a href="projects/stl-to-ascii/index.html">
+                                <img src="projects/stl-to-ascii/assets/1.jpg" alt="STL to ASCII Generator Interface"
+                                    class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                            </a>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-2">
+                                <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">3D
+                                    Software</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">STL to ASCII Generator</h3>
+                            <p class="text-gray-600 mb-4">
+                                A browser-based tool that converts 3D models to ASCII art for pen plotting,
+                                visualization,
+                                and creative projects.
+                            </p>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-sm text-gray-500">2022</span>
+                                <span class="text-sm text-gray-500">Three.js, JavaScript, 3D Modeling</span>
+                            </div>
+                            <a href="projects/stl-to-ascii/index.html"
+                                class="text-blue-600 hover:text-blue-700 font-medium">
+                                View Project Details →
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Syringe Extruder -->
+                    <div class="project-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+                        data-category="3d-printing">
+                        <div class="h-48 overflow-hidden">
+                            <a href="projects/syringe-extruder/index.html">
+                                <img src="projects/syringe-extruder/assets/2.jpeg"
+                                    alt="Syringe Extruder - 3D Printing Food"
+                                    class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                            </a>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-2">
+                                <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">3D
+                                    Printing</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Syringe Extruder - 3D Printing Food
+                            </h3>
+                            <p class="text-gray-600 mb-4">
+                                A 3D printed syringe extruder capable of extruding frosting,
+                                peanut butter, jelly, and other viscous materials.
+                            </p>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-sm text-gray-500">2021</span>
+                                <span class="text-sm text-gray-500">3D Printing, CAD Design</span>
+                            </div>
+                            <a href="projects/syringe-extruder/index.html"
+                                class="text-blue-600 hover:text-blue-700 font-medium">
+                                View Project Details →
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- ResinLapse -->
+                    <div class="project-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+                        data-category="3d-printing">
+                        <div class="h-48 overflow-hidden">
+                            <a href="projects/resinlapse/index.html">
+                                <img src="projects/resinlapse/assets/1.jpeg" alt="ResinLapse Sensor for DSLR Cameras"
+                                    class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                            </a>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-2">
+                                <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">3D
+                                    Printing</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">ResinLapse</h3>
+                            <p class="text-gray-600 mb-4">
+                                A specially designed sensor that allows DSLR cameras to capture and create smooth
+                                timelapse videos using resin 3D printers.
+                            </p>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-sm text-gray-500">2021</span>
+                                <span class="text-sm text-gray-500">Entrepreneurship, Soldering, Marketing</span>
+                            </div>
+                            <a href="projects/resinlapse/index.html"
+                                class="text-blue-600 hover:text-blue-700 font-medium">
+                                View Project Details →
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 3D Low Poly Generator -->
+                    <div class="project-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+                        data-category="3d-software">
+                        <div class="h-48 overflow-hidden">
+                            <a href="projects/3d-low-poly-generator/index.html">
+                                <img src="projects/3d-low-poly-generator/assets/2.jpeg"
+                                    alt="3D Low Poly Generator Interface"
+                                    class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                            </a>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-2">
+                                <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">3D
+                                    Software</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">3D Low Poly Generator</h3>
+                            <p class="text-gray-600 mb-4">
+                                A browser-based tool that allows users to selectively decimate 3D models to create low
+                                poly 3D models, written using Three.js.
+                            </p>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-sm text-gray-500">2021</span>
+                                <span class="text-sm text-gray-500">Three.js, JavaScript, 3D Modeling</span>
+                            </div>
+                            <a href="projects/3d-low-poly-generator/index.html"
+                                class="text-blue-600 hover:text-blue-700 font-medium">
+                                View Project Details →
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <p class="text-gray-400">&copy; <span class="copyright-year">2025</span> Andrew Sink. All rights
+                        reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+
+        <script>
+            // Scroll to Top functionality
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+
+            // Show/hide scroll to top button based on scroll position
+            window.addEventListener('scroll', function () {
+                const scrollToTopBtn = document.getElementById('scroll-to-top-btn');
+                if (scrollToTopBtn) {
+                    if (window.pageYOffset > 300) { // Show after scrolling 300px
+                        scrollToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                        scrollToTopBtn.classList.add('opacity-100');
+                    } else {
+                        scrollToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                        scrollToTopBtn.classList.remove('opacity-100');
+                    }
+                }
+            });
+        </script>
+
+        <!-- Scroll to Top Button -->
+        <button id="scroll-to-top-btn" onclick="scrollToTop()"
+            class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 opacity-0 pointer-events-none z-50 group">
+            <svg class="w-6 h-6 transform group-hover:-translate-y-1 transition-transform duration-200" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+            </svg>
+        </button>
+    </body>
+
+</html>
