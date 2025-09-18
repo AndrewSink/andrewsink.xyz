@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description"
+            content="Andrew Sink's media appearances, interviews, and published articles. Explore my contributions to major publications, industry presentations, and interviews.">
+        <title>Press & Media - Andrew Sink</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            // Hybrid approach: CDN primary, local fallback
+            window.addEventListener('load', function () {
+                if (typeof tailwind === 'undefined') {
+                    const link = document.createElement('link');
+                    link.rel = 'stylesheet';
+                    link.href = '../assets/tailwind.min.css';
+                    document.head.appendChild(link);
+                }
+            });
+        </script>
+        <link rel="stylesheet" href="../styles.css">
+        <style>
+            /* Ensure filter button colors override any conflicting styles */
+            .filter-btn.bg-blue-100 {
+                background-color: #dbeafe !important;
+                color: #1e40af !important;
+            }
+
+            .filter-btn.bg-green-100 {
+                background-color: #dcfce7 !important;
+                color: #166534 !important;
+            }
+
+            .filter-btn.bg-orange-100 {
+                background-color: #fed7aa !important;
+                color: #9a3412 !important;
+            }
+
+            .filter-btn.bg-purple-100 {
+                background-color: #f3e8ff !important;
+                color: #7c3aed !important;
+            }
+
+            .filter-btn.bg-blue-600 {
+                background-color: #2563eb !important;
+                color: white !important;
+            }
+        </style>
+    </head>
+
+    <body class="bg-gray-50">
+        <!-- Navigation -->
+        <nav class="bg-white shadow-sm sticky top-0 z-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <div class="flex items-center">
+                        <a href="../index.html"
+                            class="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors">Andrew
+                            Sink</a>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="../index.html" class="text-gray-600 hover:text-blue-600 transition-colors">Home</a>
+                        <a href="../projects.html"
+                            class="text-gray-600 hover:text-blue-600 transition-colors">Projects</a>
+                        <a href="index.html" class="text-gray-600 hover:text-blue-600 transition-colors">Press &
+                            Media</a>
+                        <a href="../about.html" class="text-gray-600 hover:text-blue-600 transition-colors">About</a>
+                    </div>
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-button" class="text-gray-600 hover:text-gray-900">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <!-- Mobile menu -->
+                <div id="mobile-menu" class="hidden md:hidden pb-4">
+                    <a href="../index.html" class="block py-2 text-gray-900">Home</a>
+                    <a href="../projects.html" class="block py-2 text-gray-600">Projects</a>
+                    <a href="index.html" class="block py-2 text-gray-900">Press & Media</a>
+                    <a href="../about.html" class="block py-2 text-gray-600">About</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Media Coverage</h1>
+                        <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                            Interviews, features, and media coverage highlighting my work in 3D printing, 3D scanning,
+                            and
+                            the additive manufacturing industry.
+                        </p>
+                        <p class="text-gray-600 mb-8 leading-relaxed">
+                            Additionally, I write freelance articles for leading technology publications, sharing
+                            practical knowledge about 3D printing, maker culture, and DIY projects. <br> <br>My work has
+                            been
+                            featured in Tom's Hardware, Make Magazine, Adafruit, and other platforms in both digital and
+                            print formats.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="#timeline"
+                                class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors text-center">
+                                View Timeline
+                            </a>
+                            <a href="../projects.html"
+                                class="border border-blue-600 text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors text-center">
+                                View Projects
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex justify-center">
+                        <div class="w-80 h-80 rounded-full overflow-hidden shadow-xl">
+                            <img src="../Andrew-Sink-2.jpeg" alt="Andrew Sink - Applications Engineer"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section id="timeline" class="py-20 bg-gray-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Filter Buttons -->
+                <div class="text-center mb-12">
+                    <h3 class="text-lg font-semibold text-gray-700 mb-4">Filter by Type</h3>
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <button onclick="filterMedia('all')"
+                            class="filter-btn bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors active">
+                            All
+                        </button>
+                        <button onclick="filterMedia('article')"
+                            class="filter-btn bg-blue-100 text-blue-800 px-4 py-2 rounded-lg hover:bg-blue-200 transition-colors">
+                            Article
+                        </button>
+                        <button onclick="filterMedia('interview')"
+                            class="filter-btn bg-green-100 text-green-800 px-4 py-2 rounded-lg hover:bg-green-200 transition-colors">
+                            Interview
+                        </button>
+                        <button onclick="filterMedia('presentation')"
+                            class="filter-btn bg-orange-100 text-orange-800 px-4 py-2 rounded-lg hover:bg-orange-200 transition-colors">
+                            Presentation
+                        </button>
+                        <button onclick="filterMedia('writing')"
+                            class="filter-btn bg-purple-100 text-purple-800 px-4 py-2 rounded-lg hover:bg-purple-200 transition-colors">
+                            Writing
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 2025 -->
+                <div class="mb-16">
+                    <div class="flex items-center mb-8">
+                        <div class="bg-blue-600 text-white text-2xl font-bold px-6 py-3 rounded-lg">2025</div>
+                        <div class="ml-6 h-px bg-gray-300 flex-1"></div>
+                    </div>
+
+                    <div class="space-y-8">
+                        <!-- fizik Eurobike -->
+                        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center space-x-3">
+                                    <span
+                                        class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Article</span>
+                                    <span class="text-sm text-gray-500">July, 2025</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <a href="assets/pdfs/2025-fizik-eurobike-design-news.pdf" target="_blank"
+                                        class="text-gray-600 hover:text-gray-700 text-sm font-medium">📄 Mirror PDF</a>
+                                    <a href="https://www.designnews.com/3d-printing/fizik-captures-eurobike-gold-with-carbon-s-3d-printed-custom-saddles"
+                                        target="_blank" rel="noopener noreferrer"
+                                        class="text-blue-600 hover:text-blue-700 text-sm font-medium">Read Article →</a>
+
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">"Fizik Captures EUROBIKE Gold with
+                                Carbon’s 3D Printed Custom Saddles"
+                                - Design News</h3>
+                            <p class="text-gray-600 mb-3">
+                                Coverage of the fizik One-to-One custom saddle project, the underlying Carbon
+                                technology, and my role in the design process.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <span>Design News</span>
+                            </div>
+                        </div>
+
+                        <!-- Letting It Ride -->
+                        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center space-x-3">
+                                    <span
+                                        class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">Writing</span>
+                                    <span class="text-sm text-gray-500">April, 2025</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <a href="assets/pdfs/2025-letting-it-ride-cycling-industry.pdf" target="_blank"
+                                        class="text-gray-600 hover:text-gray-700 text-sm font-medium">📄 Mirror PDF</a>
+                                    <a href="https://issuu.com/docs/74e6de136b1588a52a1b546543cd85fe/24" target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="text-blue-600 hover:text-blue-700 text-sm font-medium">Read Article →</a>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">"Letting it Ride"
+                                - Cycling Industry News</h3>
+                            <p class="text-gray-600 mb-3">
+                                In-depth article covering the state of 3D printed saddles in the cycling industry and my
+                                work at Carbon. </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <span>Cycling Industry News</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2024 -->
+                <div class="mb-16">
+                    <div class="flex items-center mb-8">
+                        <div class="bg-blue-600 text-white text-2xl font-bold px-6 py-3 rounded-lg">2024</div>
+                        <div class="ml-6 h-px bg-gray-300 flex-1"></div>
+                    </div>
+
+                    <div class="space-y-8">
+                        <!-- CDFAM Berlin -->
+                        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center space-x-3">
+                                    <span
+                                        class="bg-orange-100 text-orange-800 text-xs font-medium px-2.5 py-0.5 rounded">Presentation</span>
+                                    <span class="text-sm text-gray-500">May, 2024</span>
+                                </div>
+                                <a href="https://www.youtube.com/watch?v=TC-StK5UVm4" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-blue-600 hover:text-blue-700 text-sm font-medium">Watch Presentation
+                                    →</a>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">"The Road to 1M Custom Parts / Month" -
+                                CDFAM Berlin</h3>
+                            <p class="text-gray-600 mb-3">
+                                Spoke at the Computational Design Symposium in Berlin, Germany about my work at Carbon
+                                focused on the future of mass customization in additive manufacturing.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <span>CDFAM Berlin</span>
+                            </div>
+                        </div>
+
+                        <!-- Bambu Lab X1-Carbon Review -->
+                        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center space-x-3">
+                                    <span
+                                        class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">Writing</span>
+                                    <span class="text-sm text-gray-500">February, 2024</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <a href="https://www.tomshardware.com/3d-printing/bambu-lab-x1-carbon-3d-printer-review"
+                                        target="_blank" rel="noopener noreferrer"
+                                        class="text-blue-600 hover:text-blue-700 text-sm font-medium">Read Review →</a>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">"Bambu Lab X1-Carbon 3D Printer Review:
+                                Leading the Pack" - Tom's Hardware</h3>
+                            <p class="text-gray-600 mb-3">
+                                Comprehensive review of the Bambu Lab X1-Carbon 3D printer, testing the advanced
+                                features including LiDAR-assisted calibration, high-speed multicolor printing, and
+                                CoreXY motion system.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <span>Tom's Hardware</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2023 -->
+                <div class="mb-16">
+                    <div class="flex items-center mb-8">
+                        <div class="bg-blue-600 text-white text-2xl font-bold px-6 py-3 rounded-lg">2023</div>
+                        <div class="ml-6 h-px bg-gray-300 flex-1"></div>
+                    </div>
+
+                    <div class="space-y-8">
+
+                        <!-- CNET -->
+                        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center space-x-3">
+                                    <span
+                                        class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Interview</span>
+                                    <span class="text-sm text-gray-500">June, 2023</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <a href="assets/pdfs/2023-generative-ai-cnet.pdf" target="_blank"
+                                        class="text-gray-600 hover:text-gray-700 text-sm font-medium">📄 Mirror PDF</a>
+                                    <a href="https://www.cnet.com/tech/features/how-generative-ai-helps-bring-big-design-ideas-to-life/"
+                                        target="_blank" rel="noopener noreferrer"
+                                        class="text-blue-600 hover:text-blue-700 text-sm font-medium">Read Article →</a>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">"How Generative AI Helps Bring Big
+                                Design Ideas to Life" - CNET</h3>
+                            <p class="text-gray-600 mb-3">
+                                Interviewed by CNET about my work in exploring generative design for 3D printing,
+                                software
+                                development, and 3D modeling.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <span>CNET</span>
+                            </div>
+                        </div>
+
+                        <!-- Make Magazine - Scanning -->
+                        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center space-x-3">
+                                    <span
+                                        class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">Writing</span>
+                                    <span class="text-sm text-gray-500">May, 2023</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <a href="https://makezine.com/article/digital-fabrication/3d-printing-workshop/3d-scanning-is-easier-than-ever-heres-what-you-need-to-get-started/"
+                                        target="_blank" rel="noopener noreferrer"
+                                        class="text-blue-600 hover:text-blue-700 text-sm font-medium">Read Article
+                                        →</a>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">"3D Scanning Is Easier Than Ever,
+                                Here’s What You Need To Get Started" - Make Magazine</h3>
+                            <p class="text-gray-600 mb-3">
+                                Article covering the basics of 3D scanning written at beginners, covering hardware,
+                                software, and best practices.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <span>Make Magazine</span>
+                            </div>
+                        </div>
+
+                        <!-- AMUG 2023 -->
+                        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center space-x-3">
+                                    <span
+                                        class="bg-orange-100 text-orange-800 text-xs font-medium px-2.5 py-0.5 rounded">Presentation</span>
+                                    <span class="text-sm text-gray-500">March, 2023</span>
+                                </div>
+                                <a href="https://www.linkedin.com/posts/carbon_were-back-from-a-great-week-at-amug-2023-activity-7046135923859763200-Qqat"
+                                    target="_blank" rel="noopener noreferrer"
+                                    class="text-blue-600 hover:text-blue-700 text-sm font-medium">LinkedIn
+                                    →</a>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">"Realizing Mass Customization with
+                                Software and Automation" - AMUG 2023</h3>
+                            <p class="text-gray-600 mb-3">
+                                Presentation focused on mass customization in additive manufacturing using software
+                                automation.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <span>AMUG 2023 - Chicago, IL</span>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <!-- 2022 -->
+                <div class="mb-16">
+                    <div class="flex items-center mb-8">
+                        <div class="bg-blue-600 text-white text-2xl font-bold px-6 py-3 rounded-lg">2022</div>
+                        <div class="ml-6 h-px bg-gray-300 flex-1"></div>
+                    </div>
+
+                    <div class="space-y-8">
+                        <!-- Hackspace Interview -->
+                        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center space-x-3">
+                                    <span
+                                        class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Interview</span>
+                                    <span class="text-sm text-gray-500">August, 2022</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <a href="assets/pdfs/2022-hackspace-interview.pdf" target="_blank"
+                                        class="text-gray-600 hover:text-gray-700 text-sm font-medium">📄 Mirror PDF</a>
+                                    <a href="https://magazines-assets.raspberrypi.com/articles/andrew-sink-interview"
+                                        target="_blank" rel="noopener noreferrer"
+                                        class="text-blue-600 hover:text-blue-700 text-sm font-medium">Read Article →</a>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">"Andrew Sink Interview" - HackSpace
+                                Magazine</h3>
+                            <p class="text-gray-600 mb-3">
+                                Featured interview discussing my work in 3D printing, 3D scanning,
+                                and my love for Michael Crichton's novel Timeline.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <span>HackSpace Magazine</span>
+                            </div>
+                        </div>
+
+                        <!-- Adafruit - 3D Scanning Guide -->
+                        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center space-x-3">
+                                    <span
+                                        class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">Writing</span>
+                                    <span class="text-sm text-gray-500">August, 2022</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <a href="assets/pdfs/2022-adafruit-low-poly.pdf" target="_blank"
+                                        class="text-gray-600 hover:text-gray-700 text-sm font-medium">📄 Mirror PDF</a>
+                                    <a href="https://learn.adafruit.com/use-3d-scanning-to-make-low-poly-3d-models"
+                                        target="_blank" rel="noopener noreferrer"
+                                        class="text-blue-600 hover:text-blue-700 text-sm font-medium">Read Article →</a>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">"Use 3D Scanning to Make Low Poly 3D
+                                Models" - Adafruit</h3>
+                            <p class="text-gray-600 mb-3">
+                                Comprehensive guide on creating 3D scans using your phone, converting them to low poly
+                                3D models, and 3D printing the output.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <span>Adafruit</span>
+                            </div>
+                        </div>
+
+                        <!-- STL to ASCII Hackaday -->
+                        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center space-x-3">
+                                    <span
+                                        class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Article</span>
+                                    <span class="text-sm text-gray-500">January, 2022</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <a href="assets/pdfs/2022-STL-to-ASCII-hackaday.pdf" target="_blank"
+                                        class="text-gray-600 hover:text-gray-700 text-sm font-medium">📄 Mirror PDF</a>
+                                    <a href="https://hackaday.com/2022/01/22/online-tool-turns-stls-into-3d-ascii-art/"
+                                        target="_blank" rel="noopener noreferrer"
+                                        class="text-blue-600 hover:text-blue-700 text-sm font-medium">Read Article
+                                        →</a>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">"Online Tool Turns STLs Into 3D ASCII
+                                Art" - Hackaday</h3>
+                            <p class="text-gray-600 mb-3">
+                                Article discussing my STL to ASCII Generator and an overview of the project.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <span>HackSpace Magazine</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2021 -->
+                <div class="mb-16">
+                    <div class="flex items-center mb-8">
+                        <div class="bg-blue-600 text-white text-2xl font-bold px-6 py-3 rounded-lg">2021</div>
+                        <div class="ml-6 h-px bg-gray-300 flex-1"></div>
+                    </div>
+
+                    <div class="space-y-8">
+
+                        <!-- Tom's Hardware - 3D Scanning Selfie -->
+                        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center space-x-3">
+                                    <span
+                                        class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">Writing</span>
+                                    <span class="text-sm text-gray-500">July, 2021</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <a href="https://www.tomshardware.com/how-to/make-3d-printed-selfie" target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="text-blue-600 hover:text-blue-700 text-sm font-medium">Read Article
+                                        →</a>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">"How to Make a 3D Printed Selfie With
+                                Your Phone" - Tom's Hardware</h3>
+                            <p class="text-gray-600 mb-3">
+                                Tutorial written for beginners on how to create a 3D printed selfie using the LiDAR
+                                sensor on an iPhone.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <span>Tom's Hardware</span>
+                            </div>
+                        </div>
+                        <!-- Tom's Hardware - 3D Scanning Selfie -->
+                        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center space-x-3">
+                                    <span
+                                        class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">Writing</span>
+                                    <span class="text-sm text-gray-500">September, 2021</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <a href="assets/pdfs/2021-input-3D-scanning.pdf" target="_blank"
+                                        class="text-gray-600 hover:text-gray-700 text-sm font-medium">📄
+                                        Mirror PDF</a>
+                                    <a href="https://www.inverse.com/input/guides/how-to-scan-objects-in-3d-with-your-iphone"
+                                        target="_blank" rel="noopener noreferrer"
+                                        class="text-blue-600 hover:text-blue-700 text-sm font-medium">Read Article
+                                        →</a>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">"How to scan objects in 3D with your
+                                iPhone" - Input</h3>
+                            <p class="text-gray-600 mb-3">
+                                3D scanning tutorial focused on how to use photogrammetry to convert 2D
+                                images into 3D models.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <span>Input Magazine</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2020 -->
+                <div class="mb-16">
+                    <div class="flex items-center mb-8">
+                        <div class="bg-blue-600 text-white text-2xl font-bold px-6 py-3 rounded-lg">2020</div>
+                        <div class="ml-6 h-px bg-gray-300 flex-1"></div>
+                    </div>
+
+                    <div class="space-y-8">
+                        <!-- VERRF -->
+                        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center space-x-3">
+                                    <span
+                                        class="bg-orange-100 text-orange-800 text-xs font-medium px-2.5 py-0.5 rounded">Presentation</span>
+                                    <span class="text-sm text-gray-500">October, 2020</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <a href="https://www.youtube.com/watch?v=lYCIlLQ0zWY&ab_channel=AndrewSink"
+                                        target="_blank" rel="noopener noreferrer"
+                                        class="text-blue-600 hover:text-blue-700 text-sm font-medium">Watch
+                                        Presentation
+                                        →</a>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">"Facial Recognition, 3D Printing, and
+                                You!" - VERRF</h3>
+                            <p class="text-gray-600 mb-3">
+                                Presented my semi-successful attempts at defeating Google and Apple facial recognition
+                                technology using 3D printed masks made from high-resolution 3D scans.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <span>Virtual East Coast RepRap Fest</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2016 -->
+                <div class="mb-16">
+                    <div class="flex items-center mb-8">
+                        <div class="bg-blue-600 text-white text-2xl font-bold px-6 py-3 rounded-lg">2016</div>
+                        <div class="ml-6 h-px bg-gray-300 flex-1"></div>
+                    </div>
+
+                    <div class="space-y-8">
+                        <!-- Hackaday - 3D Printed Brain -->
+                        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center space-x-3">
+                                    <span
+                                        class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Article</span>
+                                    <span class="text-sm text-gray-500">January, 2016</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <a href="assets/pdfs/2016-3d-mri.pdf" target="_blank"
+                                        class="text-gray-600 hover:text-gray-700 text-sm font-medium">📄 Mirror PDF</a>
+                                    <a href="https://hackaday.com/2016/01/30/this-is-my-3d-printed-brain/"
+                                        target="_blank" rel="noopener noreferrer"
+                                        class="text-blue-600 hover:text-blue-700 text-sm font-medium">Read Article
+                                        →</a>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">"This is my 3D Printed Brain!" -
+                                Hackaday</h3>
+                            <p class="text-gray-600 mb-3">
+                                Converted an MRI scan of my brain into a 3D model, and documented the DICOM segmentation
+                                process.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <span>Hackaday</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <p class="text-gray-400">&copy; <span class="copyright-year">2025</span> Andrew Sink. All rights
+                    reserved.</p>
+            </div>
+        </footer>
+
+        <script src="../script.js"></script>
+
+        <script>
+            // Media filtering functionality
+            function filterMedia(type) {
+                const mediaItems = document.querySelectorAll('.media-item');
+                const filterButtons = document.querySelectorAll('.filter-btn');
+
+                // Reset all buttons to their original states
+                filterButtons.forEach(btn => {
+                    // Remove only the active state classes, but keep the original background
+                    btn.classList.remove('active', 'bg-blue-600', 'text-white');
+
+                    // Ensure each button has its correct theme colors
+                    const buttonText = btn.textContent.trim().toLowerCase();
+
+                    // Remove all possible background colors first
+                    btn.classList.remove('bg-gray-100', 'text-gray-800', 'bg-blue-100', 'text-blue-800', 'bg-green-100', 'text-green-800', 'bg-orange-100', 'text-orange-800');
+
+                    // Add the correct theme colors back  
+                    if (buttonText === 'all') {
+                        btn.classList.add('bg-blue-100', 'text-blue-800');
+                    } else if (buttonText === 'article') {
+                        btn.classList.add('bg-blue-100', 'text-blue-800');
+                    } else if (buttonText === 'interview') {
+                        btn.classList.add('bg-green-100', 'text-green-800');
+                    } else if (buttonText === 'presentation') {
+                        btn.classList.add('bg-orange-100', 'text-orange-800');
+                    } else if (buttonText === 'writing') {
+                        btn.classList.add('bg-purple-100', 'text-purple-800');
+                    }
+
+                });
+
+                // Find and activate the clicked button
+                const activeButton = document.querySelector(`[onclick="filterMedia('${type}')"]`);
+                if (activeButton) {
+                    activeButton.classList.remove('bg-gray-100', 'text-gray-800', 'bg-blue-100', 'text-blue-800', 'bg-green-100', 'text-green-800', 'bg-orange-100', 'text-orange-800');
+                    activeButton.classList.add('active', 'bg-blue-600', 'text-white');
+                }
+
+                // Filter media items
+                mediaItems.forEach(item => {
+                    const itemType = item.getAttribute('data-type');
+                    const shouldShow = type === 'all' || itemType === type;
+
+                    if (shouldShow) {
+                        item.style.display = 'block';
+                        item.classList.remove('hidden');
+                    } else {
+                        item.style.display = 'none';
+                        item.classList.add('hidden');
+                    }
+                });
+
+                // Update year section visibility
+                updateYearSectionVisibility();
+            }
+
+            // Update year section visibility based on visible items
+            function updateYearSectionVisibility() {
+                // Look specifically for year sections by finding the year headers first
+                const yearHeaders = document.querySelectorAll('#timeline .bg-blue-600.text-white.text-2xl');
+
+                yearHeaders.forEach(yearHeader => {
+                    if (yearHeader.textContent.match(/^\d{4}$/)) {
+                        // Find the parent year section (go up to the div that contains the year header)
+                        const yearSection = yearHeader.closest('div.mb-16');
+                        if (yearSection) {
+                            const visibleItems = yearSection.querySelectorAll('.media-item:not(.hidden)');
+
+                            if (visibleItems.length === 0) {
+                                yearSection.style.display = 'none';
+                            } else {
+                                yearSection.style.display = 'block';
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Initialize with all items visible
+            document.addEventListener('DOMContentLoaded', function () {
+                // Add media-item class and data-type to all existing media items
+                const allMediaItems = document.querySelectorAll('#timeline .bg-white.rounded-lg.shadow-md');
+
+                allMediaItems.forEach(item => {
+                    item.classList.add('media-item');
+
+                    // Determine type based on the tag text
+                    const tagElement = item.querySelector('span.bg-blue-100, span.bg-green-100, span.bg-purple-100, span.bg-orange-100');
+                    if (tagElement) {
+                        const tagText = tagElement.textContent.toLowerCase();
+                        if (tagText.includes('article') || tagText.includes('feature')) {
+                            item.setAttribute('data-type', 'article');
+                        } else if (tagText.includes('interview')) {
+                            item.setAttribute('data-type', 'interview');
+                        } else if (tagText.includes('presentation')) {
+                            item.setAttribute('data-type', 'presentation');
+                        } else if (tagText.includes('writing')) {
+                            item.setAttribute('data-type', 'writing');
+                        }
+                    }
+
+                });
+            });
+
+            // Scroll to Top functionality
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+
+            // Show/hide scroll to top button based on scroll position
+            window.addEventListener('scroll', function () {
+                const scrollToTopBtn = document.getElementById('scroll-to-top-btn');
+                if (scrollToTopBtn) {
+                    if (window.pageYOffset > 300) { // Show after scrolling 300px
+                        scrollToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                        scrollToTopBtn.classList.add('opacity-100');
+                    } else {
+                        scrollToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                        scrollToTopBtn.classList.remove('opacity-100');
+                    }
+                }
+            });
+        </script>
+
+        <!-- Scroll to Top Button -->
+        <button id="scroll-to-top-btn" onclick="scrollToTop()"
+            class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 opacity-0 pointer-events-none z-50 group">
+            <svg class="w-6 h-6 transform group-hover:-translate-y-1 transition-transform duration-200" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+            </svg>
+        </button>
+    </body>
+
+</html>

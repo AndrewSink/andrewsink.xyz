@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description"
+            content="Custom 3D printed bike saddle using Fizik One-to-One pressure mapping system. Personalized fit with pressure analysis and custom manufacturing.">
+        <title>fizik One-to-One - Andrew Sink</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            // Hybrid approach: CDN primary, local fallback
+            window.addEventListener('load', function () {
+                if (typeof tailwind === 'undefined') {
+                    const link = document.createElement('link');
+                    link.rel = 'stylesheet';
+                    link.href = '../../assets/tailwind.min.css';
+                    document.head.appendChild(link);
+                }
+            });
+        </script>
+        <link rel="stylesheet" href="../../styles.css">
+    </head>
+
+    <body class="bg-gray-50">
+        <!-- Navigation -->
+        <nav class="bg-white shadow-sm sticky top-0 z-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <div class="flex items-center">
+                        <a href="../../index.html"
+                            class="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors">Andrew
+                            Sink</a>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="../../index.html" class="text-gray-900 hover:text-blue-600 transition-colors">Home</a>
+                        <a href="../../projects.html"
+                            class="text-gray-600 hover:text-blue-600 transition-colors">Projects</a>
+                        <a href="../../media/" class="text-gray-600 hover:text-blue-600 transition-colors">Press &
+                            Media</a>
+                        <a href="../../about.html" class="text-gray-600 hover:text-blue-600 transition-colors">About</a>
+                    </div>
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-button" class="text-gray-600 hover:text-gray-900">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <!-- Mobile menu -->
+                <div id="mobile-menu" class="hidden md:hidden pb-4">
+                    <a href="../../index.html" class="block py-2 text-gray-900">Home</a>
+                    <a href="../../projects.html" class="block py-2 text-gray-600">Projects</a>
+                    <a href="../../media/" class="block py-2 text-gray-600">Press & Media</a>
+                    <a href="../../about.html" class="block py-2 text-gray-600">About</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section with Image on Right -->
+        <section class="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <!-- Left: Project Description -->
+                    <div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <a href="../../projects.html?filter=3d-printing"
+                                class="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-medium hover:bg-green-200 transition-colors cursor-pointer">
+                                3D Printing
+                            </a>
+                            <span class="text-sm text-gray-500">2024</span>
+                        </div>
+                        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                            fizik - One-to-One
+                        </h1>
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                            The fizik One-to-One program allows cyclists to generate a customized 3D printed saddle
+                            using real-time pressure mapping data and an advanced algorithm from gebioMized. </p>
+                        <p class="text-gray-600 mb-8 leading-relaxed">
+                            Designed and printed using cutting-edge
+                            Carbon DLS
+                            technology and software. My role in this project was creating the zonal lattice structure,
+                            creating a workflow to generate customized geometry for each rider, and optimizing for
+                            manufacturability.
+                            Launched in
+                            2024.</p>
+
+                        <!-- Tools Used Section -->
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-3">Technologies & Skills</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">CAD
+                                    Design</span>
+                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">3D
+                                    Printing</span>
+                                <span
+                                    class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">Carbon
+                                    Design Engine</span>
+                                <span
+                                    class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">Prototyping</span>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                            <a href="#gallery"
+                                class="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors text-center">
+                                View Gallery
+                            </a>
+                            <a href="https://www.fizik.com/en-us/pages/one-to-one" target="_blank"
+                                rel="noopener noreferrer"
+                                class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors text-center">
+                                fizik Site
+                            </a>
+                            <a href="../../projects.html"
+                                class="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:border-green-300 hover:text-green-600 transition-colors text-center">
+                                Back to Projects
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right: Hero Image -->
+                    <div class="flex justify-center lg:justify-end">
+                        <div class="relative">
+                            <img src="assets/1.jpeg" alt="3D Printed Bike Saddle"
+                                class="w-full max-w-xl h-auto rounded-lg shadow-xl">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Demo Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Project Video</h2>
+                    <p class="text-xl text-gray-600">Product launch video - fizik</p>
+                </div>
+
+                <div class="max-w-4xl mx-auto">
+                    <div class="relative aspect-video rounded-lg overflow-hidden shadow-lg">
+                        <iframe src="https://www.youtube.com/embed/T4u_j8SjoiQ?si=mm7GsUc2oTIpbOEg"
+                            title="fizik One-to-One Custom Saddle - Product Launch" class="w-full h-full"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Project Gallery</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Image 1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                        <img src="assets/1.jpeg" alt="Heatmap used to generate the saddle
+                                geometry"
+                            class="w-full h-48 object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                            onclick="openImageModal('assets/1.jpeg', '3D Printed Bike Saddle - Image 1')">
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Heatmap used to generate the saddle
+                                geometry
+                            </h3>
+                            <p class="text-gray-600">Photo: fizik</p>
+                        </div>
+                    </div>
+
+                    <!-- Image 2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                        <img src="assets/2.jpeg" alt="Printed on the Carbon L1 3D Printer"
+                            class="w-full h-48 object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                            onclick="openImageModal('assets/2.jpeg', '3D Printed Bike Saddle - Image 2')">
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Printed on the Carbon L1 3D Printer
+                            </h3>
+                            <p class="text-gray-600">Photo: fizik</p>
+                        </div>
+                    </div>
+
+                    <!-- Image 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                        <img src="assets/3.jpeg" alt="Inspection of the printed saddle"
+                            class="w-full h-48 object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                            onclick="openImageModal('assets/3.jpeg', '3D Printed Bike Saddle - Image 3')">
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Inspection of the printed saddle</h3>
+                            <p class="text-gray-600">Photo: fizik</p>
+                        </div>
+                    </div>
+
+                    <!-- Image 4 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                        <img src="assets/4.jpeg" alt="Getting fitted using the fizik
+                                One-to-One
+                                pressure mapping system"
+                            class="w-full h-48 object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                            onclick="openImageModal('assets/4.jpeg', '3D Printed Bike Saddle - Image 4')">
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Using the fizik
+                                One-to-One
+                                pressure mapping system</h3>
+                            <p class="text-gray-600">I went through the process at the Sea Otter Classic cycling event
+                                in 2025</p>
+                        </div>
+                    </div>
+
+                    <!-- Image 5 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                        <img src="assets/5.jpeg" alt="The shipped product"
+                            class="w-full h-48 object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                            onclick="openImageModal('assets/5.jpeg', '3D Printed Bike Saddle - Image 5')">
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">The final product</h3>
+                            <p class="text-gray-600">My custom fizik One-to-One saddle</p>
+                        </div>
+                    </div>
+
+                    <!-- Image 6 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                        <img src="assets/6.jpeg" alt="My custom fizik One-to-One saddle"
+                            class="w-full h-48 object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                            onclick="openImageModal('assets/6.jpeg', '3D Printed Bike Saddle - Image 6')">
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">My custom fizik One-to-One saddle</h3>
+                            <p class="text-gray-600">My custom fizik One-to-One saddle</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <p class="text-gray-400">&copy; <span class="copyright-year">2025</span> Andrew Sink. All rights
+                    reserved.</p>
+            </div>
+        </footer>
+
+        <!-- Image Modal -->
+        <div id="imageModal"
+            class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center p-4">
+            <div class="relative max-w-4xl max-h-full">
+                <button onclick="closeImageModal()"
+                    class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300 transition-colors z-10">
+                    &times;
+                </button>
+
+                <!-- Left Arrow -->
+                <button onclick="previousImage()" id="prevArrow"
+                    class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-4xl hover:text-gray-300 transition-colors z-10 bg-black bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center">
+                    ‹
+                </button>
+
+                <!-- Right Arrow -->
+                <button onclick="nextImage()" id="nextArrow"
+                    class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-4xl hover:text-gray-300 transition-colors z-10 bg-black bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center">
+                    ›
+                </button>
+
+                <img id="modalImage" src="" alt="" class="max-w-full max-h-full object-contain">
+            </div>
+        </div>
+
+        <script src="../../script.js"></script>
+        <script>
+            // Gallery images array
+            const galleryImages = [
+                { src: 'assets/1.jpeg', title: '3D Printed Bike Saddle - Image 1' },
+                { src: 'assets/2.jpeg', title: '3D Printed Bike Saddle - Image 2' },
+                { src: 'assets/3.jpeg', title: '3D Printed Bike Saddle - Image 3' },
+                { src: 'assets/4.jpeg', title: '3D Printed Bike Saddle - Image 4' },
+                { src: 'assets/5.jpeg', title: '3D Printed Bike Saddle - Image 5' },
+                { src: 'assets/6.jpeg', title: '3D Printed Bike Saddle - Image 6' }
+            ];
+
+            let currentImageIndex = 0;
+
+            function openImageModal(imageSrc, title) {
+                const modal = document.getElementById('imageModal');
+                const modalImage = document.getElementById('modalImage');
+                const scrollToTopBtn = document.getElementById('scroll-to-top-btn');
+
+                // Find the index of the clicked image
+                currentImageIndex = galleryImages.findIndex(img => img.src === imageSrc);
+
+                // Find the gallery image element to get its alt text
+                const galleryImage = document.querySelector(`img[src="${imageSrc}"]`);
+                const altText = galleryImage ? galleryImage.alt : title;
+
+                modalImage.src = imageSrc;
+                modalImage.alt = altText;
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+
+                // Hide back-to-top button when modal opens
+                if (scrollToTopBtn) {
+                    scrollToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                    scrollToTopBtn.classList.remove('opacity-100');
+                }
+
+                updateArrowVisibility();
+            }
+
+            function nextImage() {
+                currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+                const image = galleryImages[currentImageIndex];
+                const modalImage = document.getElementById('modalImage');
+
+                // Find the gallery image element to get its alt text
+                const galleryImage = document.querySelector(`img[src="${image.src}"]`);
+                const altText = galleryImage ? galleryImage.alt : image.title;
+
+                modalImage.src = image.src;
+                modalImage.alt = altText;
+                updateArrowVisibility();
+            }
+
+            function previousImage() {
+                currentImageIndex = currentImageIndex === 0 ? galleryImages.length - 1 : currentImageIndex - 1;
+                const image = galleryImages[currentImageIndex];
+                const modalImage = document.getElementById('modalImage');
+
+                // Find the gallery image element to get its alt text
+                const galleryImage = document.querySelector(`img[src="${image.src}"]`);
+                const altText = galleryImage ? galleryImage.alt : image.title;
+
+                modalImage.src = image.src;
+                modalImage.alt = altText;
+                updateArrowVisibility();
+            }
+
+            function updateArrowVisibility() {
+                const prevArrow = document.getElementById('prevArrow');
+                const nextArrow = document.getElementById('nextArrow');
+
+                // Show/hide arrows based on gallery size
+                if (galleryImages.length <= 1) {
+                    prevArrow.style.display = 'none';
+                    nextArrow.style.display = 'none';
+                } else {
+                    prevArrow.style.display = 'flex';
+                    nextArrow.style.display = 'flex';
+                }
+            }
+
+            function closeImageModal() {
+                const modal = document.getElementById('imageModal');
+                const scrollToTopBtn = document.getElementById('scroll-to-top-btn');
+
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+
+                // Show back-to-top button when modal closes (if scrolled > 300px)
+                if (scrollToTopBtn && window.pageYOffset > 300) {
+                    scrollToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                    scrollToTopBtn.classList.add('opacity-100');
+                }
+            }
+
+            // Close modal when clicking outside the image
+            document.getElementById('imageModal').addEventListener('click', function (e) {
+                if (e.target === this) {
+                    closeImageModal();
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    closeImageModal();
+                } else if (e.key === 'ArrowLeft') {
+                    previousImage();
+                } else if (e.key === 'ArrowRight') {
+                    nextImage();
+                }
+            });
+
+            // Scroll to Top functionality
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+
+            // Show/hide scroll to top button based on scroll position
+            window.addEventListener('scroll', function () {
+                const scrollToTopBtn = document.getElementById('scroll-to-top-btn');
+                const imageModal = document.getElementById('imageModal');
+                if (scrollToTopBtn) {
+                    // Only show back-to-top button if modal is hidden and scrolled > 300px
+                    if (window.pageYOffset > 300 && imageModal.classList.contains('hidden')) {
+                        scrollToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                        scrollToTopBtn.classList.add('opacity-100');
+                    } else {
+                        scrollToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                        scrollToTopBtn.classList.remove('opacity-100');
+                    }
+                }
+            });
+        </script>
+
+        <!-- Scroll to Top Button -->
+        <button id="scroll-to-top-btn" onclick="scrollToTop()"
+            class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 opacity-0 pointer-events-none z-50 group">
+            <svg class="w-6 h-6 transform group-hover:-translate-y-1 transition-transform duration-200" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+            </svg>
+        </button>
+    </body>
+
+</html>

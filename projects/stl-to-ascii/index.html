@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description"
+            content="Convert STL 3D models to ASCII art with customizable resolution and character sets. Perfect for text-based 3D visualization and creative projects.">
+        <title>STL to ASCII Generator - Andrew Sink</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            // Hybrid approach: CDN primary, local fallback
+            window.addEventListener('load', function () {
+                if (typeof tailwind === 'undefined') {
+                    const link = document.createElement('link');
+                    link.rel = 'stylesheet';
+                    link.href = '../../assets/tailwind.min.css';
+                    document.head.appendChild(link);
+                }
+            });
+        </script>
+        <link rel="stylesheet" href="../../styles.css">
+    </head>
+
+    <body class="bg-gray-50">
+        <!-- Navigation -->
+        <nav class="bg-white shadow-sm sticky top-0 z-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <div class="flex items-center">
+                        <a href="../../index.html"
+                            class="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors">Andrew
+                            Sink</a>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="../../index.html" class="text-gray-900 hover:text-blue-600 transition-colors">Home</a>
+                        <a href="../../projects.html"
+                            class="text-gray-600 hover:text-blue-600 transition-colors">Projects</a>
+                        <a href="../../media/" class="text-gray-600 hover:text-blue-600 transition-colors">Press &
+                            Media</a>
+                        <a href="../../about.html" class="text-gray-600 hover:text-blue-600 transition-colors">About</a>
+                    </div>
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-button" class="text-gray-600 hover:text-gray-900">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <!-- Mobile menu -->
+                <div id="mobile-menu" class="hidden md:hidden pb-4">
+                    <a href="../../index.html" class="block py-2 text-gray-900">Home</a>
+                    <a href="../../projects.html" class="block py-2 text-gray-600">Projects</a>
+                    <a href="../../media/" class="block py-2 text-gray-600">Press & Media</a>
+                    <a href="../../about.html" class="block py-2 text-gray-600">About</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section with Image on Right -->
+        <section class="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <!-- Left: Project Description -->
+                    <div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <a href="../../projects.html?filter=3d-software"
+                                class="inline-flex items-center px-4 py-2 rounded-full bg-purple-100 text-purple-800 text-sm font-medium hover:bg-purple-200 transition-colors cursor-pointer">
+                                3D Software
+                            </a>
+                            <span class="text-sm text-gray-500">2022</span>
+                        </div>
+                        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                            STL to ASCII Generator
+                        </h1>
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                            Upload a 3D model and convert it to an ASCII image. </p>
+                        <p class="text-gray-600 mb-8 leading-relaxed">
+                            A web-based tool that converts 3D models to ASCII art for pen plotting, visualization,
+                            and creative projects.
+                        </p>
+
+                        <!-- Tools Used Section -->
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-3">Technologies & Skills</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">Three.js</span>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                            <a href="#gallery"
+                                class="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors text-center">
+                                View Gallery
+                            </a>
+                            <a href="https://andrewsink.github.io/STL-to-ASCII-Generator/" target="_blank"
+                                rel="noopener noreferrer"
+                                class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors text-center">
+                                STL to ASCII Generator
+                            </a>
+                            <a href="https://github.com/AndrewSink/STL-to-ASCII-Generator" target="_blank"
+                                rel="noopener noreferrer"
+                                class="bg-gray-800 text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition-colors text-center">
+                                Full code on GitHub
+                            </a>
+                            <a href="../../projects.html"
+                                class="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:border-green-300 hover:text-green-600 transition-colors text-center">
+                                Back to Projects
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right: Hero Image -->
+                    <div class="flex justify-center lg:justify-end">
+                        <div class="relative">
+                            <img src="assets/1.jpg" alt="STL to ASCII Generator Interface"
+                                class="w-full max-w-xl h-auto rounded-lg shadow-xl">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Demo Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Project Video</h2>
+                    <p class="text-xl text-gray-600">STL to ASCII Generator - demonstration and usage</p>
+                </div>
+
+                <div class="max-w-4xl mx-auto">
+                    <div class="relative aspect-video rounded-lg overflow-hidden shadow-lg">
+                        <iframe src="https://www.youtube.com/embed/yMbQCKOULcU?si=aksdmlFNEmuQOpRu"
+                            title="STL to ASCII Generator Demo - Andrew Sink" class="w-full h-full" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Project Gallery</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Image 1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                        <img src="assets/1.jpg" alt="The STL to ASCII generator interface showing 3D model upload and
+                                conversion"
+                            class="w-full h-48 object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                            onclick="openImageModal('assets/1.jpg', 'STL to ASCII - Main Interface')">
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Main Interface</h3>
+                            <p class="text-gray-600">The STL to ASCII generator interface showing 3D model upload and
+                                conversion
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Image 2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                        <img src="assets/2.jpg" alt="ASCII art output generated from the 3D model"
+                            class="w-full h-48 object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                            onclick="openImageModal('assets/2.jpg', 'STL to ASCII - Conversion Result')">
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Conversion Result</h3>
+                            <p class="text-gray-600">ASCII art output generated from the 3D model
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- GIF 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                        <img src="assets/3.gif" alt="STL to ASCII - Animation Demo"
+                            class="w-full h-48 object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                            onclick="openImageModal('assets/3.gif', 'STL to ASCII - Animation Demo')">
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Animation Demo</h3>
+                            <p class="text-gray-600">Watch the conversion process in action with animated demonstration
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <p class="text-gray-400">&copy; <span class="copyright-year">2025</span> Andrew Sink. All rights
+                    reserved.</p>
+            </div>
+        </footer>
+
+        <!-- Image Modal -->
+        <div id="imageModal"
+            class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center p-4">
+            <div class="relative max-w-4xl max-h-full">
+                <button onclick="closeImageModal()"
+                    class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300 transition-colors z-10">
+                    &times;
+                </button>
+
+                <!-- Left Arrow -->
+                <button onclick="previousImage()" id="prevArrow"
+                    class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-4xl hover:text-gray-300 transition-colors z-10 bg-black bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center">
+                    ‹
+                </button>
+
+                <!-- Right Arrow -->
+                <button onclick="nextImage()" id="nextArrow"
+                    class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-4xl hover:text-gray-300 transition-colors z-10 bg-black bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center">
+                    ›
+                </button>
+
+                <img id="modalImage" src="" alt="" class="max-w-full max-h-full object-contain">
+                <video id="modalVideo" src="" alt="" class="max-w-full max-h-full object-contain hidden" autoplay muted
+                    loop controls></video>
+            </div>
+        </div>
+
+        <script src="../../script.js"></script>
+        <script>
+            // Gallery images array
+            const galleryImages = [
+                { src: 'assets/1.jpg', title: 'STL to ASCII - Main Interface' },
+                { src: 'assets/2.jpg', title: 'STL to ASCII - Conversion Result' },
+                { src: 'assets/3.gif', title: 'STL to ASCII - Animation Demo' }
+            ];
+
+            let currentImageIndex = 0;
+
+            function openImageModal(imageSrc, title) {
+                const modal = document.getElementById('imageModal');
+                const modalImage = document.getElementById('modalImage');
+                const modalVideo = document.getElementById('modalVideo');
+                const scrollToTopBtn = document.getElementById('scroll-to-top-btn');
+
+                // Find the index of the clicked image
+                currentImageIndex = galleryImages.findIndex(img => img.src === imageSrc);
+
+                // Find the gallery image element to get its alt text
+                const galleryImage = document.querySelector(`img[src="${imageSrc}"]`);
+                const altText = galleryImage ? galleryImage.alt : title;
+
+                // Check if it's a video or image
+                if (imageSrc.endsWith('.mp4')) {
+                    modalVideo.src = imageSrc;
+                    modalVideo.alt = altText;
+                    modalImage.classList.add('hidden');
+                    modalVideo.classList.remove('hidden');
+                } else {
+                    modalImage.src = imageSrc;
+                    modalImage.alt = altText;
+                    modalVideo.classList.add('hidden');
+                    modalImage.classList.remove('hidden');
+                }
+
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+
+                // Hide back-to-top button when modal opens
+                if (scrollToTopBtn) {
+                    scrollToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                    scrollToTopBtn.classList.remove('opacity-100');
+                }
+
+                updateArrowVisibility();
+            }
+
+            function nextImage() {
+                currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+                const image = galleryImages[currentImageIndex];
+                const modalImage = document.getElementById('modalImage');
+                const modalVideo = document.getElementById('modalVideo');
+
+                // Find the gallery image element to get its alt text
+                const galleryImage = document.querySelector(`img[src="${image.src}"]`);
+                const altText = galleryImage ? galleryImage.alt : image.title;
+
+                // Check if it's a video or image
+                if (image.src.endsWith('.mp4')) {
+                    modalVideo.src = image.src;
+                    modalVideo.alt = altText;
+                    modalImage.classList.add('hidden');
+                    modalVideo.classList.remove('hidden');
+                } else {
+                    modalImage.src = image.src;
+                    modalImage.alt = altText;
+                    modalVideo.classList.add('hidden');
+                    modalImage.classList.remove('hidden');
+                }
+
+                updateArrowVisibility();
+            }
+
+            function previousImage() {
+                currentImageIndex = currentImageIndex === 0 ? galleryImages.length - 1 : currentImageIndex - 1;
+                const image = galleryImages[currentImageIndex];
+                const modalImage = document.getElementById('modalImage');
+                const modalVideo = document.getElementById('modalVideo');
+
+                // Find the gallery image element to get its alt text
+                const galleryImage = document.querySelector(`img[src="${image.src}"]`);
+                const altText = galleryImage ? galleryImage.alt : image.title;
+
+                // Check if it's a video or image
+                if (image.src.endsWith('.mp4')) {
+                    modalVideo.src = image.src;
+                    modalVideo.alt = altText;
+                    modalImage.classList.add('hidden');
+                    modalVideo.classList.remove('hidden');
+                } else {
+                    modalImage.src = image.src;
+                    modalImage.alt = altText;
+                    modalVideo.classList.add('hidden');
+                    modalImage.classList.remove('hidden');
+                }
+
+                updateArrowVisibility();
+            }
+
+            function updateArrowVisibility() {
+                const prevArrow = document.getElementById('prevArrow');
+                const nextArrow = document.getElementById('nextArrow');
+
+                // Show/hide arrows based on gallery size
+                if (galleryImages.length <= 1) {
+                    prevArrow.style.display = 'none';
+                    nextArrow.style.display = 'none';
+                } else {
+                    prevArrow.style.display = 'flex';
+                    nextArrow.style.display = 'flex';
+                }
+            }
+
+            function closeImageModal() {
+                const modal = document.getElementById('imageModal');
+                const scrollToTopBtn = document.getElementById('scroll-to-top-btn');
+
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+
+                // Show back-to-top button when modal closes (if scrolled > 300px)
+                if (scrollToTopBtn && window.pageYOffset > 300) {
+                    scrollToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                    scrollToTopBtn.classList.add('opacity-100');
+                }
+            }
+
+            // Close modal when clicking outside the image
+            document.getElementById('imageModal').addEventListener('click', function (e) {
+                if (e.target === this) {
+                    closeImageModal();
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    closeImageModal();
+                } else if (e.key === 'ArrowLeft') {
+                    previousImage();
+                } else if (e.key === 'ArrowRight') {
+                    nextImage();
+                }
+            });
+
+            // Scroll to Top functionality
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+
+            // Show/hide scroll to top button based on scroll position
+            window.addEventListener('scroll', function () {
+                const scrollToTopBtn = document.getElementById('scroll-to-top-btn');
+                const imageModal = document.getElementById('imageModal');
+                if (scrollToTopBtn) {
+                    // Only show back-to-top button if modal is hidden and scrolled > 300px
+                    if (window.pageYOffset > 300 && imageModal.classList.contains('hidden')) {
+                        scrollToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                        scrollToTopBtn.classList.add('opacity-100');
+                    } else {
+                        scrollToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                        scrollToTopBtn.classList.remove('opacity-100');
+                    }
+                }
+            });
+        </script>
+
+        <!-- Scroll to Top Button -->
+        <button id="scroll-to-top-btn" onclick="scrollToTop()"
+            class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 opacity-0 pointer-events-none z-50 group">
+            <svg class="w-6 h-6 transform group-hover:-translate-y-1 transition-transform duration-200" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+            </svg>
+        </button>
+    </body>
+
+</html>
